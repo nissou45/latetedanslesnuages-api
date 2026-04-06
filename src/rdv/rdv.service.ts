@@ -27,4 +27,8 @@ export class RdvService {
   ): Promise<RdvDocument | null> {
     return this.rdvModel.findByIdAndUpdate(rdvId, { statut }, { new: true });
   }
+
+  async delete(rdvId: string): Promise<RdvDocument | null> {
+    return this.rdvModel.findByIdAndDelete(rdvId);
+  }
 }
